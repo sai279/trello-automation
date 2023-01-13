@@ -19,9 +19,6 @@ public class TrelloTask {
 		
 		WebDriver driver = new ChromeDriver();
 		
-//		System.setProperty("webdriver.gecko.driver", "E:\\selenium workspace\\geckodriver.exe\\");
-//		WebDriver driver = new FirefoxDriver();
-		
 		driver.get("https://trello.com/en/login");
 		
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); //wait for 60 seconds as it takes time to locate password element
@@ -40,15 +37,6 @@ public class TrelloTask {
 		
 		WebElement next = driver.findElement(By.xpath("//*[@id=\"passwordNext\"]/div/button"));
 		next.click();
-		
-//		WebElement getVerificationCode = driver.findElement(By.xpath("//*[@id=\"view_container\"]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div/ul/li[1]/div"));
-//		getVerificationCode.click();
-		
-//		WebElement atlassianLoginSubmit = driver.findElement(By.id("login-submit"));
-//		atlassianLoginSubmit.click();
-		
-//		WebElement skip = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/main/div/div[2]/div[2]/div/main/div[1]/div/div[4]/div/button[1]"));
-//		skip.click();
 		
 		WebElement createNewBoard = driver.findElement(By.xpath("//span[.='Create new board']"));
 		createNewBoard.click();
@@ -93,7 +81,6 @@ public class TrelloTask {
 		WebElement To = driver.findElement(By.xpath("//*[@id=\"board\"]/div[2]/div"));
 		
 		Actions actions = new Actions(driver);
-//		actions.clickAndHold(From).moveToElement(To).release(To).build().perform();
 		actions.dragAndDrop(From, To).build().perform();
 		
 		WebElement getPositionButton = driver.findElement(By.xpath("//*[@id=\"board\"]/div[2]/div/div[2]/a[2]/div[3]"));
