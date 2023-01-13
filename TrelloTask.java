@@ -93,7 +93,8 @@ public class TrelloTask {
 		WebElement To = driver.findElement(By.xpath("//*[@id=\"board\"]/div[2]/div"));
 		
 		Actions actions = new Actions(driver);
-		actions.clickAndHold(From).moveToElement(To).release(To).build().perform();
+//		actions.clickAndHold(From).moveToElement(To).release(To).build().perform();
+		actions.dragAndDrop(From, To).build().perform();
 		
 		WebElement getPositionButton = driver.findElement(By.xpath("//*[@id=\"board\"]/div[2]/div/div[2]/a[2]/div[3]"));
 		Point xypoint = getPositionButton.getLocation();
